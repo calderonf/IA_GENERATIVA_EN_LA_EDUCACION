@@ -1,24 +1,31 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-ngram_demo.py — Ejemplo autocontenido de modelos n-grama en español
-con manejo de OOV (<unk>) y Kneser–Ney interpolado con piso numérico.
+ngram_demo.py — Ejemplo autocontenido de modelos n‑grama en español.
 
-Incluye:
-- Tokenización sencilla (oraciones y palabras) sin dependencias externas.
-- Entrenamiento de modelos 1–3-gramas por conteo.
-- Tres técnicas de estimación:
-  * MLE (máxima verosimilitud; sin suavizado — útil como contraste).
-  * add-k (Laplace/Lidstone).
-  * Kneser–Ney interpolado (bi/tri-gramas; con un “piso” eps para evitar ceros).
-- Manejo de OOV: palabras con frecuencia <= min_count se mapean a <unk>.
-- Predicción de continuaciones (top-k), generación de oraciones.
-- Evaluación por perplejidad con división entrenamiento/prueba (70/30).
+Este script acompaña al Capítulo 1 del libro “IA generativa en la educación”
+y permite entrenar, comparar y experimentar con modelos n‑grama de orden
+1 a 3 (unigramas, bigramas y trigramas) sobre textos en español.  Incluye:
+
+– Tokenización sencilla (oraciones y palabras) sin dependencias externas.
+– Entrenamiento de modelos 1–3‑gramas por conteo.
+– Tres técnicas de estimación:
+  * **MLE** (máxima verosimilitud; sin suavizado; útil como contraste).
+  * **add‑k** (Laplace/Lidstone), que suma un valor *k* a cada conteo.
+  * **Kneser–Ney interpolado**, una versión docente con un descuento fijo *D*
+    y un piso numérico que evita probabilidades nulas en corpora pequeños.
+– Manejo de OOV: palabras con frecuencia ≤ `min_count` se mapean a `<unk>`.
+– Utilidades didácticas: predicción de continuaciones (*top‑k*), generación de
+  oraciones y evaluación por perplejidad con división 70/30 entre
+  entrenamiento y prueba.
 
 Notas:
-- Filtramos <s>, </s> y <unk> del top-k para que no “ensucien” la lista.
-- El piso eps (muy pequeño) solo se aplica si la probabilidad calculada quedó en 0.
-- En producción se usa “Modified Kneser–Ney” (p. ej., con KenLM).
+– Filtramos `<s>`, `</s>` y `<unk>` del *top‑k* para que no “ensucien” la lista.
+– El piso `eps` (muy pequeño) sólo se aplica si la probabilidad calculada
+  queda en 0.
+– En producción se utiliza la variante “Modified Kneser–Ney” (por ejemplo,
+  mediante KenLM) que emplea descuentos distintos según el conteo.  Este
+  script prioriza la claridad didáctica【6†L20-L60】.
 """
 
 from __future__ import annotations
@@ -53,13 +60,50 @@ def add_sentence_markers(sents: List[List[str]], order: int) -> List[List[str]]:
 
 class NgramLM:
     """
-    Modelo n-grama con tres suavizados:
-      - 'mle': máxima verosimilitud (sin suavizado).
-      - 'add-k': sumamos k al conteo (k pequeño, p. ej., 0.1 ó 1.0).
-      - 'kneser-ney': Kneser–Ney interpolado (bigramas/trigramas, D fijo).
-    Además:
-      - Piso numérico eps en KN para evitar ceros en corpora muy pequeños.
-      - Manejo de OOV con <unk> controlado por min_count.
+    Modelo n‑grama con manejo de OOV y tres técnicas de suavizado.
+
+    Este objeto implementa un modelo n‑grama de orden arbitrario (por
+    defecto 3) para texto en español.  Permite entrenar el modelo
+    mediante conteo directo y ofrece tres esquemas de estimación
+    probabilística:
+
+      * ``'mle'`` — máxima verosimilitud: se calcula la probabilidad
+        condicional a partir de los conteos tal cual; cualquier n‑grama
+        no observado recibe probabilidad cero.  Se usa principalmente
+        como referencia para demostrar la necesidad de suavizado.
+
+      * ``'add-k'`` — suavizado de Laplace/Lidstone: a cada conteo se
+        suma una constante positiva ``k`` (por defecto 1.0), y el
+        denominador se ajusta multiplicando ``k`` por el tamaño del
+        vocabulario.  Con valores pequeños (p. ej. 0.1) es un
+        suavizado razonable en corpora pequeños.
+
+      * ``'kneser-ney'`` — Kneser–Ney interpolado: descuenta una
+        cantidad fija ``discount`` (por defecto 0.75) de los conteos
+        observados y redistribuye la probabilidad en función de cuántos
+        contextos distintos preceden a cada palabra (probabilidad de
+        continuación).  Esta versión interpolada se aplica a bigramas y
+        trigramas; si el orden es 1, se recurre a un modelo unigrama
+        simple.  Se incluye un pequeño piso numérico ``eps`` para
+        evitar ceros en corpora diminutos.
+
+    Además de las probabilidades, el modelo maneja vocabulario
+    desconocido mediante el token ``<unk>``: cualquier palabra con
+    frecuencia menor o igual a ``min_count`` en el entrenamiento se
+    reemplaza por ``<unk>``.  Los marcadores ``<s>`` y ``</s>`` se
+    añaden automáticamente al principio y al final de cada oración
+    durante el entrenamiento.
+
+    Los principales métodos de interés son:
+
+    * :meth:`fit` — entrena el modelo a partir de una lista de textos.
+    * :meth:`prob` — devuelve la probabilidad condicional de una
+      palabra dada un contexto.
+    * :meth:`topk_next` — lista las ``k`` palabras más probables que
+      pueden seguir a un contexto.
+    * :meth:`generate` — genera una oración muestreando según el modelo.
+    * :meth:`perplexity` — calcula la perplejidad sobre un conjunto de
+      textos de prueba (menor es mejor).
     """
     def __init__(self, order: int = 3, smoothing: str = 'kneser-ney',
                  k: float = 1.0, discount: float = 0.75,
@@ -315,9 +359,21 @@ class NgramLM:
 # ---------------------------
 
 DEMO_CORPUS = """
-El docente explicó el concepto con un ejemplo sencillo. El estudiante hizo preguntas y el grupo debatió la respuesta.
-La profesora pidió comparar dos métodos en una actividad breve. El docente valoró la claridad y la precisión.
-En el proyecto final, cada equipo documentó sus decisiones y citó las fuentes utilizadas.
+El docente explicó el concepto con ejemplos de aula.
+La estudiante comparó dos métodos y justificó su elección.
+El grupo debatió la validez de las fuentes consultadas.
+La profesora pidió evidencias y referencias actualizadas.
+El equipo documentó sus decisiones y reflexionó sobre el proceso.
+La rúbrica evaluó claridad, precisión y uso ético de la IA.
+El docente revisó los borradores y sugirió mejoras puntuales.
+La clase analizó sesgos y limitaciones de los modelos generativos.
+El estudiante citó correctamente el material utilizado.
+La actividad integró lectura crítica y producción colaborativa.
+En el laboratorio, la guía describió los pasos de la práctica.
+La retroalimentación incluyó ejemplos concretos y enlaces.
+El proyecto final articuló objetivos, método y resultados.
+La revisión por pares ayudó a detectar errores frecuentes.
+El docente cerró con recomendaciones para el siguiente módulo.
 """
 
 def demo():
@@ -328,11 +384,15 @@ def demo():
     test_text  = " ".join(sents[cutoff:]) or DEMO_CORPUS
 
     print("\n=== Entrenamiento (trigrama, Kneser–Ney D=0.75, min_count=1) ===")
+    # En el ejemplo de demo conservamos min_count=1; con un corpus pequeño esto
+    # colapsa parte del vocabulario, lo cual se ilustra en el README. Para
+    # obtener un vocabulario más amplio puedes ejecutar el script con
+    # --min_count 0.
     lm_kn = NgramLM(order=3, smoothing='kneser-ney', discount=0.75, min_count=1, seed=7)
     lm_kn.fit([train_text])
     print(f"Vocabulario: {len(lm_kn.vocab)} palabras (incluye <unk>, <s>, </s>)")
-    print("Top-10 continuaciones de contexto ['el'] (sin </s> ni <unk>):")
-    for w,p in lm_kn.topk_next(['el'], k=10):
+    print("Top-10 continuaciones de contexto ['la'] (sin </s> ni <unk>):")
+    for w,p in lm_kn.topk_next(['la'], k=10):
         print(f"  {w:15s}  {p:.4f}")
 
     print("\nGeneraciones:")
@@ -363,7 +423,10 @@ def main():
                         choices=["mle","add-k","kneser-ney"], help="Técnica de estimación.")
     parser.add_argument("--k", type=float, default=0.1, help="Parámetro k para add-k.")
     parser.add_argument("--discount", type=float, default=0.75, help="Descuento D para Kneser–Ney.")
-    parser.add_argument("--min_count", type=int, default=1, help="Umbral de frecuencia para mapear a <unk> (OOV).")
+    parser.add_argument("--min_count", type=int, default=1,
+                        help="Umbral de frecuencia para mapear a <unk> (OOV). Palabras con frecuencia \
+                        menor o igual a este valor se reemplazan por <unk>. Fija 0 para conservar todas \
+                        las palabras vistas en entrenamiento.")
     parser.add_argument("--gen", type=int, default=0, help="Número de oraciones a generar tras entrenar.")
     parser.add_argument("--topk", type=str, default="", help="Contexto para top-10 continuaciones (p.ej.: \"el docente\").")
     args = parser.parse_args()
@@ -412,8 +475,9 @@ def main():
     # Perplejidad
     pp = lm.perplexity([test_text])
     print(f"\nPerplejidad en test: {pp if pp != float('inf') else 'inf'}\n")
-    print("Sugerencia: prueba --order 2 o --smoothing add-k para corpus muy pequeños. "
-          "Para proyectos grandes, considera KenLM (Modified Kneser–Ney).")
+    print("Sugerencia: prueba --order 2 o --smoothing add-k para corpus muy pequeños; ajusta"
+          " --min_count 0 si ves que el vocabulario colapsa. Para proyectos grandes,"
+          " considera KenLM (Modified Kneser–Ney).")
 
 if __name__ == "__main__":
     # Si llamas al script sin argumentos, corre una demo ilustrativa.
