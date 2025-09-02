@@ -20,6 +20,7 @@ Clasificador binario de sentimiento (positivo/negativo) con **Embedding → BiLS
 2. (Opcional) Activa GPU: **Runtime → Change runtime type → GPU**, luego **Save**. ([colab.research.google.com][2])
 3. Crea una celda **nueva** de código danco click en (+Código) y **copia/pega** todo el siguiente bloque en **una sola celda** y ejecútala dando click en  el ícono de play en la parte superior izquierda de la celda:
 
+NOTA: tambien puedes dar click en este link [documento compartido en google colab](https://colab.research.google.com/drive/1Yc61W46Z7LWzlNnF5_tz9SziLlnKlJeJ?usp=sharing)
 
 > Referencias de API usadas: LSTM y Bidirectional en Keras/TensorFlow; `pad_sequences` y `EarlyStopping`. ([keras.io][3], [TensorFlow][4])
 
@@ -67,13 +68,15 @@ python LSTM_imdb.py
 
 ## 📊 Resultados esperados
 
-En 4–6 épocas, es común obtener **AUC ≈ 0.88–0.92** y **accuracy ≈ 0.85–0.90** (varía por semilla/hardware/versión). En GPU entrenará más rápido; en CPU también funciona (más lento).
+En 4–6 épocas, es común obtener **AUC ≈ 0.88–0.95** y **accuracy ≈ 0.83–0.90** (varía por semilla/hardware/versión). En GPU entrenará más rápido; en CPU también funciona (más lento, sobretodo el entrenamiento, puede tardar más de media hora).
 
 ---
 
 ## 🧪 Pruebas rápidas de inferencia
 
-Prueba frases propias (inglés) en la celda final:
+puedes crear una celda nueva de código: para esto en google colab da click en (+Código) y con la red ya entrenada (luego de los varios minutos que tomó entrenarla) puedes hacer nuevas inferencias:
+
+Prueba frases propias (en inglés) en la celda final copia y pega este còdigo en una nueva celda:
 
 ```python
 p, label = predict_text("I didn't like the movie at all, it was too long and predictable.")
