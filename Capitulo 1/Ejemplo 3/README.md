@@ -141,12 +141,13 @@ Para extender:
 * Modelo `datificate/gpt2-small-spanish` (ver model card/licencia). ([Hugging Face][6])
 
 
+## Enlaces y referencias rápidas
 
-[1]: https://huggingface.co/datificate/gpt2-small-spanish/tree/main "datificate/gpt2-small-spanish at main"
-[2]: https://arxiv.org/abs/2205.14135 "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness"
-[3]: https://ar5iv.labs.arxiv.org/html/2205.14135 "Fast and Memory-Efficient Exact Attention with IO-Awareness"
-[4]: https://github.com/Dao-AILab/flash-attention "Dao-AILab/flash-attention: Fast and memory-efficient ..."
-[5]: https://www.gutenberg.org/files/2000/2000-0.txt "El ingenioso hidalgo don Quijote de la Mancha"
-[6]: https://huggingface.co/datificate/gpt2-small-spanish "datificate/gpt2-small-spanish"
-[7]: https://huggingface.co/docs/transformers/en/tasks/language_modeling "Causal language modeling"
-[8]: https://huggingface.co/learn/llm-course/en/chapter7/6 "Training a causal language model from scratch"
+1. [datificate/gpt2-small-spanish – árbol completo](https://huggingface.co/datificate/gpt2-small-spanish/tree/main)  
+2. [FlashAttention (paper en arXiv)](https://arxiv.org/abs/2205.14135)  
+3. [FlashAttention (versión web ar5iv)](https://ar5iv.labs.arxiv.org/html/2205.14135)  
+4. [Repositorio oficial de FlashAttention](https://github.com/Dao-AILab/flash-attention)  
+5. [Don Quijote de la Mancha – Proyecto Gutenberg](https://www.gutenberg.org/files/2000/2000-0.txt)  
+6. [Modelo GPT-2 small en español – Hugging Face](https://huggingface.co/datificate/gpt2-small-spanish)  
+7. [Guía oficial: Causal Language Modeling](https://huggingface.co/docs/transformers/en/tasks/language_modeling)  
+8. [Curso LLM: entrenar un modelo causal desde cero](https://huggingface.co/learn/llm-course/en/chapter7/6)
