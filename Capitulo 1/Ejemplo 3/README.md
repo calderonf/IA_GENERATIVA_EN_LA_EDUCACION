@@ -143,11 +143,11 @@ Para extender:
 
 ## Enlaces y referencias rápidas
 
-1. [datificate/gpt2-small-spanish – árbol completo](https://huggingface.co/datificate/gpt2-small-spanish/tree/main)  
-2. [FlashAttention (paper en arXiv)](https://arxiv.org/abs/2205.14135)  
-3. [FlashAttention (versión web ar5iv)](https://ar5iv.labs.arxiv.org/html/2205.14135)  
-4. [Repositorio oficial de FlashAttention](https://github.com/Dao-AILab/flash-attention)  
-5. [Don Quijote de la Mancha – Proyecto Gutenberg](https://www.gutenberg.org/files/2000/2000-0.txt)  
-6. [Modelo GPT-2 small en español – Hugging Face](https://huggingface.co/datificate/gpt2-small-spanish)  
-7. [Guía oficial: Causal Language Modeling](https://huggingface.co/docs/transformers/en/tasks/language_modeling)  
-8. [Curso LLM: entrenar un modelo causal desde cero](https://huggingface.co/learn/llm-course/en/chapter7/6)
+1. [datificate/gpt2-small-spanish – árbol completo](https://huggingface.co/datificate/gpt2-small-spanish/tree/main) 
+2. [FlashAttention (paper en arXiv)](https://arxiv.org/abs/2205.14135) 
+3. [FlashAttention (versión web ar5iv)](https://ar5iv.labs.arxiv.org/html/2205.14135)
+4. [Repositorio oficial de FlashAttention](https://github.com/Dao-AILab/flash-attention)
+5. [Don Quijote de la Mancha – Proyecto Gutenberg](https://www.gutenberg.org/files/2000/2000-0.txt)
+6. [Modelo GPT-2 small en español – Hugging Face](https://huggingface.co/datificate/gpt2-small-spanish)
+7. [Guía oficial: Causal Language Modeling](https://huggingface.co/docs/transformers/en/tasks/language_modeling)
+8. [Curso LLM: entrenar un modelo causal desde cero](https://huggingface.co/learn/llm-course/en/chapter7/6) 
