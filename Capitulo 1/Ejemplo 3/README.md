@@ -8,13 +8,13 @@
 
 ## 🧭 Qué hace este repo
 
-1. Descarga **100 líneas** de *Don Quijote* (dominio público) desde Project Gutenberg. :contentReference[oaicite:0]{index=0}  
+1. Descarga **100 líneas** de *Don Quijote* (dominio público) desde Project Gutenberg. 
 2. Prepara un **dataset mínimo** (solo para demostración didáctica).  
-3. Ajusta el modelo **`datificate/gpt2-small-spanish`** (licencia Apache-2.0 según su model card). :contentReference[oaicite:1]{index=1}  
+3. Ajusta el modelo **`datificate/gpt2-small-spanish`** (licencia Apache-2.0 según su model card). 
 4. Genera un **cuento de 5 oraciones** con sampling controlado.  
 5. Guarda el modelo ajustado en `gpt2_es_quijote_minift/final/`.
 
-> Para los curiosos: el procedimiento sigue la **receta oficial** de *Causal Language Modeling* de Transformers (sección “Language modeling”). :contentReference[oaicite:2]{index=2}
+> Para los curiosos: el procedimiento sigue la **receta oficial** de *Causal Language Modeling* de Transformers (sección “Language modeling”).
 
 ---
 
@@ -130,18 +130,7 @@ Para extender:
 * Curso HF: *Training a causal language model from scratch* (cap. 7.6). ([Hugging Face][8])
 * *FlashAttention* (para escalar eficientemente). ([arXiv][2])
 
----
 
-## 📌 Cita sugerida (BibTeX)
-
-```bibtex
-@misc{quijote_minift_2025,
-  title  = {Mini fine-tuning de GPT-2 (español) con ~100 líneas de Don Quijote},
-  author = {Tu Nombre},
-  year   = {2025},
-  note   = {Versión educativa. Modelo base: datificate/gpt2-small-spanish; texto: Project Gutenberg.}
-}
-```
 
 ---
 
@@ -151,15 +140,13 @@ Para extender:
 * Project Gutenberg — *Don Quijote* (ed. UTF-8). ([Project Gutenberg][5])
 * Modelo `datificate/gpt2-small-spanish` (ver model card/licencia). ([Hugging Face][6])
 
-```
-::contentReference[oaicite:13]{index=13}
-```
 
-[1]: https://huggingface.co/datificate/gpt2-small-spanish/tree/main?utm_source=chatgpt.com "datificate/gpt2-small-spanish at main"
-[2]: https://arxiv.org/abs/2205.14135?utm_source=chatgpt.com "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness"
-[3]: https://ar5iv.labs.arxiv.org/html/2205.14135?utm_source=chatgpt.com "Fast and Memory-Efficient Exact Attention with IO-Awareness"
-[4]: https://github.com/Dao-AILab/flash-attention?utm_source=chatgpt.com "Dao-AILab/flash-attention: Fast and memory-efficient ..."
-[5]: https://www.gutenberg.org/files/2000/2000-0.txt?utm_source=chatgpt.com "El ingenioso hidalgo don Quijote de la Mancha"
-[6]: https://huggingface.co/datificate/gpt2-small-spanish?utm_source=chatgpt.com "datificate/gpt2-small-spanish"
-[7]: https://huggingface.co/docs/transformers/en/tasks/language_modeling?utm_source=chatgpt.com "Causal language modeling"
-[8]: https://huggingface.co/learn/llm-course/en/chapter7/6?utm_source=chatgpt.com "Training a causal language model from scratch"
+
+[1]: https://huggingface.co/datificate/gpt2-small-spanish/tree/main "datificate/gpt2-small-spanish at main"
+[2]: https://arxiv.org/abs/2205.14135 "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness"
+[3]: https://ar5iv.labs.arxiv.org/html/2205.14135 "Fast and Memory-Efficient Exact Attention with IO-Awareness"
+[4]: https://github.com/Dao-AILab/flash-attention "Dao-AILab/flash-attention: Fast and memory-efficient ..."
+[5]: https://www.gutenberg.org/files/2000/2000-0.txt "El ingenioso hidalgo don Quijote de la Mancha"
+[6]: https://huggingface.co/datificate/gpt2-small-spanish "datificate/gpt2-small-spanish"
+[7]: https://huggingface.co/docs/transformers/en/tasks/language_modeling "Causal language modeling"
+[8]: https://huggingface.co/learn/llm-course/en/chapter7/6 "Training a causal language model from scratch"
