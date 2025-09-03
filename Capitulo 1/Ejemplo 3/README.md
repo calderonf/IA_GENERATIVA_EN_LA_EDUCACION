@@ -1,37 +1,33 @@
 
 # Mini fine-tuning de GPT-2 (español) con ~100 líneas de *Don Quijote*
 
-> Ajuste educativo **ultra-ligero** de un GPT-2 pequeño en español para **completar un cuento de 5 oraciones**.  
+> Ajuste educativo **ultra-ligero** de un GPT-2 pequeño en español para **completar un prompt corto**.  
 > Diseñado para **Google Colab** (GPU recomendada) o ejecución local.
 
 ---
 
 ## 🧭 Qué hace este repo
 
-1. Descarga **100 líneas** de *Don Quijote* (dominio público) desde Project Gutenberg. 
+1. Descarga **algunas líneas** de *Don Quijote* (dominio público) desde Project Gutenberg. 
 2. Prepara un **dataset mínimo** (solo para demostración didáctica).  
 3. Ajusta el modelo **`datificate/gpt2-small-spanish`** (licencia Apache-2.0 según su model card). 
-4. Genera un **cuento de 5 oraciones** con sampling controlado.  
+4. Genera un **cuento de 5 oraciones** con muestreo controlado.  
 5. Guarda el modelo ajustado en `gpt2_es_quijote_minift/final/`.
 
-> Para los curiosos: el procedimiento sigue la **receta oficial** de *Causal Language Modeling* de Transformers (sección “Language modeling”).
+> Para los curiosos: el procedimiento sigue la **receta oficial** de *Causal Language Modeling* de Transformers (sección “Language modeling”), ver al final en créditos.
 
 ---
 
 ## ⚡️ Ejecución en Google Colab (recomendada)
 
-1. **Abrir Colab** y activar GPU: `Entorno de ejecución → Cambiar tipo de entorno → GPU`.
-2. Crear una celda e instalar dependencias:
-    ```bash
-    pip install "transformers==4.45.2" "datasets==2.20.0" "accelerate==0.33.0" sentencepiece
+1. **Abrir Colab** y activar GPU: `Entorno de ejecución → Cambiar tipo de entorno de ejecución → GPU T4` o alguna otra que tenga disponible que tenga las letras GPU NO CPU o TPU, y dar click en `Guargar` .
+2. Crear una celda `+Código` y copiar y pegar el código de miniift.py en esta celda
+3. Ejecuta: dando click en `Ejecutar todas` o en el simbolo de play que sale al acercar el mouse a la parte superior izquierda de la celda que quieres ejecutar
+4. Puedes crear otra celda y ejecutar:
+    ```python
+    gen = load_generator_from_disk()
+    generate_text("Escribe cinco oraciones sobre un colegio de monjas quijotescas.", generator=gen)#acá el prompt entre ""
     ```
-
-3. **Sube** `gpt2_es_minift.py` al espacio de trabajo de Colab.
-4. Ejecuta:
-
-   ```bash
-   python gpt2_es_minift.py --epochs 2 --lr 1e-4 --block_size 128 --max_new_tokens 160
-   ```
 
 **Salida esperada (resumen):**
 
@@ -40,35 +36,21 @@
 
 ---
 
-## 🖥️ Ejecución local
-
-Requisitos:
-
-* Python **3.9+** (probado en 3.10)
-* GPU NVIDIA (opcional) con drivers/CUDA configurados
-
-```bash
-python -m venv .venv && source .venv/bin/activate  # en Windows: .venv\Scripts\activate
-pip install "transformers==4.45.2" "datasets==2.20.0" "accelerate==0.33.0" sentencepiece
-python gpt2_es_minift.py
-```
-
----
 
 ## 🔧 Parámetros útiles (CLI)
+En la parte superior del script puedes ajustar directamente las variables.
 
-| Flag                   | Default                         | Explicación “amigable”                                                      |
-| ---------------------- | ------------------------------- | --------------------------------------------------------------------------- |
-| `--epochs`             | `2`                             | **Vueltas al cuaderno**; con pocos datos, 1–3 suelen bastar.                |
-| `--lr`                 | `1e-4`                          | **Qué tan rápido corrijo**; muy grande = inestable, muy pequeño = lento.    |
-| `--block_size`         | `128`                           | **Ventana de contexto** por lote; subirlo consume más VRAM.                 |
-| `--train_bs`           | `2`                             | Tamaño de batch (train) por dispositivo.                                    |
-| `--grad_accum`         | `4`                             | **Acumulación de gradientes** para simular batches más grandes.             |
-| `--max_new_tokens`     | `160`                           | Largo máximo del texto **nuevo** a generar.                                 |
-| `--temperature`        | `0.9`                           | Creatividad: ↑ temperatura ⇒ ↑ variedad.                                    |
-| `--top_k` / `--top_p`  | `50` / `0.95`                   | Sampling controlado: **suerte con cinturón de seguridad**.                  |
-| `--repetition_penalty` | `1.1`                           | Penaliza repeticiones molestas.                                             |
-| `--model_id`           | `datificate/gpt2-small-spanish` | Puedes cambiar a otro GPT-2 en español si lo prefieres. ([Hugging Face][1]) |
+| Variable             | Default     | Explicación “amigable”                                           |
+| -------------------- | ----------- | ---------------------------------------------------------------- |
+| `EPOCHS`             | `2`         | **Vueltas al cuaderno**; con pocos datos, 1–3 bastan.            |
+| `LR`                 | `1e-4`      | **Qué tan rápido corrijo**; grande = inestable, pequeño = lento. |
+| `BLOCK_SIZE`         | `128`       | **Ventana de contexto**; más grande consume más VRAM.            |
+| `TRAIN_BS`           | `2`         | Tamaño de batch (train).                                         |
+| `GRAD_ACCUM`         | `4`         | **Acumulación de gradientes** (simula batches mayores).          |
+| `MAX_NEW_TOKENS`     | `160`       | Largo máximo del texto **nuevo**.                                |
+| `TEMPERATURE`        | `0.9`       | Creatividad: ↑ temperatura ⇒ ↑ variedad.                         |
+| `TOP_K` / `TOP_P`    | `50`/`0.95` | Sampling controlado: **suerte con cinturón de seguridad**.       |
+| `REPETITION_PENALTY` | `1.1`       | Penaliza repeticiones molestas.                                  |
 
 ---
 
@@ -76,13 +58,13 @@ python gpt2_es_minift.py
 
 * **Transferencia de estilo** con **muy pocos datos**: verás vocabulario y cadencia “quijotesca”.
 * **Limitaciones**: el dataset diminuto propicia **sobreajuste**; no es un experimento de producción.
-* **Buena práctica**: compara generaciones **antes** y **después** del ajuste y pide a tus estudiantes identificar “huellas” del corpus.
+* **Buena práctica**: compara generaciones **antes** y **después** del ajuste y pide a tus estudiantes identificar “huellas” del corpus con el que se está entrenando aumenta N_LINES = 500  al inicio para entrenar con algo más del corpus, que pasa?
 
 Para extender:
 
 * Mezcla textos contemporáneos para un tono más moderno.
-* Incrementa `epochs` y reduce `lr` para un ajuste más fino (si tienes más datos).
-* Explora kernels/optimizaciones modernas si escalas (p. ej., *FlashAttention*). ([arXiv][2], [ar5iv][3], [GitHub][4])
+* Incrementa `EPOCHS` y reduce `LR` para un ajuste más fino (si tienes más datos).
+* Explora kernels/optimizaciones modernas si escalas (p. ej., *FlashAttention*). ([arXiv][2], [ar5iv][3], [GitHub][4]) (avanzado)
 
 ---
 
@@ -91,7 +73,7 @@ Para extender:
 ```
 .
 ├── gpt2_es_minift.py          # Script principal (entrena, evalúa, genera y guarda)
-├── don_quijote_100.txt        # Se crea automáticamente (100 líneas extraídas)
+├── don_quijote_100.txt        # Se crea automáticamente
 └── gpt2_es_quijote_minift/
     └── final/                 # Carpeta del modelo ajustado + tokenizer
 ```
@@ -112,7 +94,7 @@ Para extender:
 
 * **Texto**: *Don Quijote* desde Project Gutenberg (*2000-0.txt*). Ver términos en la página del proyecto. ([Project Gutenberg][5])
 * **Modelo base**: \[`datificate/gpt2-small-spanish`] (model card indica **Apache-2.0**). Revisa siempre el model card para uso y atribución. ([Hugging Face][6])
-* **Código de este repo**: MIT (ajústalo si tu institución requiere otra licencia).
+* **Código de este repo**: MIT .
 
 ---
 
