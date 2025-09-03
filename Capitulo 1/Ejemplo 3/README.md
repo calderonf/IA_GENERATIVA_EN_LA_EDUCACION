@@ -14,6 +14,8 @@
 4. Genera un **cuento de 5 oraciones** con muestreo controlado.  
 5. Guarda el modelo ajustado en `gpt2_es_quijote_minift/final/`.
 
+> Tambien puedes encontrar este ejemplo directamente en: [google colab](https://colab.research.google.com/drive/1uSRsAuAs2PqXKouHunf8URDaG1rNv-Ut?usp=sharing)
+
 > Para los curiosos: el procedimiento sigue la **receta oficial** de *Causal Language Modeling* de Transformers (sección “Language modeling”), ver al final en créditos.
 
 ---
