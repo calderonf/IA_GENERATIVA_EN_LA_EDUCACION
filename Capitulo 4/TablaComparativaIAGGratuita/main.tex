@@ -1,0 +1,50 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[landscape, margin=1.5cm]{geometry}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\usepackage{colortbl}
+\usepackage{xcolor}
+
+\begin{document}
+
+\section*{Comparativa de Modelos de IA Generativa (Versiones Gratuitas)}
+
+Este documento resume las características de varias plataformas de IA generativa gratuitas.  
+Se incluyen capacidades multimodales, generación de imágenes, búsqueda web/documentos y modos especiales como \textit{Deep Search} o \textit{Study Mode}.
+
+\vspace{0.5cm}
+
+\rowcolors{2}{gray!10}{white}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|
+>{\centering\arraybackslash}m{2.5cm}|
+>{\centering\arraybackslash}m{2.5cm}|
+>{\centering\arraybackslash}m{2.5cm}|
+>{\centering\arraybackslash}m{2.5cm}|
+>{\centering\arraybackslash}m{2.5cm}|
+>{\centering\arraybackslash}m{2.5cm}|
+>{\raggedright\arraybackslash}X|}
+\hline
+\rowcolor{blue!40} 
+\textbf{Modelo} & \textbf{Entrada imágenes} & \textbf{Genera imágenes} & \textbf{Deep search} & \textbf{Modo estudiante} & \textbf{Búsqueda web} & \textbf{Búsqueda en docs} & \textbf{Enlace} \\
+\hline
+ChatGPT & Limitado (Plus/Enterprise) & Sí (DALL·E con límite) & Sí (limitado en Free) & Sí (Study Mode) & Sí & Sí & \href{https://chat.openai.com}{chat.openai.com} \\
+\hline
+Gemini & Sí & Sí (Nano Banana) & Sí (Deep Research) & No formal & Sí & Sí & \href{https://gemini.google.com}{gemini.google.com} \\
+\hline
+Claude & Sí & No & No (pero Web Search) & Explicaciones paso a paso & Sí & Sí & \href{https://claude.ai}{claude.ai} \\
+\hline
+DeepSeek & Sí (Janus) & Sí (Janus) & Sí (chat con web) & No formal & Sí & Sí & \href{https://chat.deepseek.com}{chat.deepseek.com} \\
+\hline
+Grok & Sí (modelos nuevos) & Limitado (Imagine pago) & Sí (DeepSearch) & No formal & Sí & — & \href{https://x.ai}{x.ai} \\
+\hline
+Qwen & Sí (imagen+video) & Sí (Qwen-Image) & Sí (Deep Research free) & Explicaciones paso a paso & Sí & Sí & \href{https://chat.qwen.ai}{chat.qwen.ai} \\
+\hline
+Kimi & Sí (visión multimodal) & No & Sí (Researcher) & No formal & Sí & Sí & \href{https://kimi.moonshot.cn}{kimi.moonshot.cn} \\
+\hline
+Meta AI & Sí (fotos en chat) & Sí (genera/edita) & No & No formal & Sí & — & \href{https://www.meta.ai}{meta.ai} \\
+\hline
+\end{tabularx}
+
+\end{document}
