@@ -22,9 +22,9 @@ Esta tabla responde a las preguntas que un docente necesita resolver antes de ma
 | **Gemini** (Google) | Sí, con límites | Sí | **Sí**, incluida edición | Sí | Sí por defecto; desactivarlo cuesta el historial | AI Plus 4,99 · AI Pro 19,99 |
 | **Mistral** (Vibe) | Sí, con límites | Sí, limitada | **Sí** | Sí, sesiones limitadas | Sí, con exclusión en la cuenta | Pro 14,99 · estudiante 5,99 |
 | **Grok** (xAI) | Sí | Sí | Limitada | — | No por defecto en grok.com; sí dentro de X | SuperGrok 30 (300 anual) |
-| DeepSeek | Sí | *sin verificar* | *sin verificar* | *sin verificar* | Sí por defecto; exclusión poco visible | — |
-| Qwen (Qwen Studio) | Sí | *no documentada* | Sí | *sin verificar* | *documentación limitada* | — |
-| Kimi (Moonshot) | Sí | *sin verificar* | *sin verificar* | *sin verificar* | *sin mecanismo claro de exclusión* | — |
+| DeepSeek | Sí | Sí | Sí (modelos Janus) ᴰ | *sin verificar* | Sí por defecto; exclusión poco visible | — |
+| Qwen (Qwen Studio) | Sí | *no documentada* | Sí (Qwen-Image) ᴰ | *sin verificar* | *documentación limitada* | — |
+| Kimi (Moonshot) | Sí | *sin verificar* | No documentada | *sin verificar* | *sin mecanismo claro de exclusión* | — |
 | Meta AI | Sí | Sí | Sí | No | Sí; exclusión compleja y sin garantía | — |
 
 ### Tres cosas que conviene saber antes de recomendar
@@ -35,9 +35,13 @@ Esta tabla responde a las preguntas que un docente necesita resolver antes de ma
 
 **Mistral renombró su asistente a Vibe.** «Le Chat» sobrevive solo como nombre de la aplicación móvil en las tiendas.
 
-### Cuatro herramientas que no pudimos verificar
+### Cuatro herramientas: capacidades sí, condiciones comerciales no
 
-DeepSeek, Qwen, Kimi y Meta AI aparecen con celdas marcadas como *sin verificar*, y merece explicarse por qué:
+DeepSeek, Qwen, Kimi y Meta AI aparecen con varias celdas marcadas como *sin verificar*, y conviene precisar qué falta exactamente, porque no es todo.
+
+**Sus capacidades sí están documentadas oficialmente**, y las fuentes están más abajo en el nivel 1: DeepSeek publica los modelos Janus en su repositorio y su ficha de modelo; Qwen documenta Qwen-Image en su blog de ingeniería; Moonshot publica la documentación del modelo de visión de Kimi; Meta describe en sus centros de ayuda cómo generar imágenes y preguntar por una foto en el chat. Las celdas marcadas con **ᴰ** se apoyan en esa documentación oficial, aunque sea de 2025.
+
+**Lo que no pudimos establecer son las condiciones comerciales**: qué se ofrece exactamente en el plan gratuito, con qué límites, a qué precio y bajo qué política de datos. Que un modelo exista y esté documentado no significa que esté disponible sin pagar, ni que lo siga estando el próximo semestre.
 
 | Herramienta | Obstáculo encontrado el 10-sep-2026 |
 |---|---|
@@ -46,7 +50,9 @@ DeepSeek, Qwen, Kimi y Meta AI aparecen con celdas marcadas como *sin verificar*
 | Qwen | Ahora **Qwen Studio**. Enumera capacidades pero no precios, y no menciona búsqueda web |
 | Kimi | Página en chino, sin precios accesibles |
 
-Preferimos dejar el hueco visible antes que rellenarlo con datos de terceros sin comprobar. Y vale la pena sacar la conclusión: **cuando una institución no puede determinar con certeza qué se hace con los datos de sus estudiantes, esa opacidad es en sí misma parte del riesgo de adoptar la herramienta.**
+Preferimos dejar el hueco visible antes que rellenarlo con datos de terceros sin comprobar.
+
+La distinción importa al decidir. Puedes explicarle a un estudiante qué sabe hacer una de estas herramientas apoyándote en documentación oficial; lo que no puedes es garantizarle que la tendrá gratis, ni asegurarle a tu institución qué se hará con lo que suba. **Cuando no es posible determinar qué plan se está usando ni qué ocurre con los datos, esa opacidad es en sí misma parte del riesgo de adoptar la herramienta.**
 
 ---
 
