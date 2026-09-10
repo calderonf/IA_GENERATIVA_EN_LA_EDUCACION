@@ -151,15 +151,7 @@ Ninguna fuente es perfecta, y la clasificación de arriba no es un juicio sobre 
 
 El capítulo 4 del libro desarrolla esto en su **protocolo de verificación en cuatro pasos**: solicitar fuentes, comprobar que existen y dicen lo que se afirma, triangular con al menos dos fuentes independientes, y documentar el proceso. La regla práctica: **cuanto más consecuencias tenga la decisión, más arriba en esta escala debe estar la fuente que la sustenta.** Para probar una herramienta en tu propia clase, una pista de un foro puede bastarte. Para redactar la política de IA de una facultad, no.
 
-Los enlaces se conservan sin el parámetro de rastreo `?utm_source=` con el que fueron recopilados.
-
 ---
-
-<!-- Definiciones de las citas numeradas que aparecen en la comparativa de 2025.
-     En el archivo original estaban como lista numerada, asi que las citas [Nombre][N]
-     del texto no resolvian a ningun enlace. Convertidas al formato de referencia de
-     Markdown para que funcionen, y limpiadas del parametro de rastreo utm_source.
-     La clasificacion por niveles de fiabilidad esta en la seccion Fuentes, mas arriba. -->
 
 [1]: https://www.byteplus.com/en/topic/418442 "How to Use Qwen 2.5 Max AI Online for Free in 2025"
 [2]: https://x.com/Alibaba_Qwen/status/1958506067324960816 "Discover Deep Research in Qwen Chat for free!"
