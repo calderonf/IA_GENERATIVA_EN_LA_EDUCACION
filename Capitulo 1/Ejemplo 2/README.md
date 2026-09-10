@@ -26,7 +26,7 @@ NOTA: tambien puedes dar click en este link [documento compartido en google cola
 
 ---
 
-## 🧠 ¿Cómo interpretar la salida
+## 🧠 Cómo interpretar la salida
 
 * El modelo termina en una **sigmoid** → devuelve un valor **p ∈ \[0, 1]**.
 * **Umbral 0.5** (por defecto aquí):
@@ -57,7 +57,7 @@ python LSTM_imdb.py
 
 ---
 
-## 🧱 ¿Qué hace cada componente
+## 🧱 Qué hace cada componente
 
 * **`Embedding(V, d, mask_zero=True)`**: convierte índices en vectores densos y **enmascara** el padding para que la LSTM lo ignore. ([TensorFlow][5])
 * **`Bidirectional(LSTM(units))`**: procesa la secuencia izquierda→derecha y derecha→izquierda y concatena estados. Suele mejorar señales contextuales. ([keras.io][6])
