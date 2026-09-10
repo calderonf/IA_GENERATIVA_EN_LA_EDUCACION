@@ -5,67 +5,57 @@ Complementos del **capítulo 4** de *Inteligencia artificial generativa en la Ed
 | Archivo | Qué es |
 |---|---|
 | [`Lista_verificacion_herramientas.md`](./Lista_verificacion_herramientas.md) | Lista de verificación completa y plantilla de registro para comprobar una herramienta antes de recomendarla a un estudiante. Versión extendida de la que aparece resumida en el libro. |
-| [`TablaComparativaIAGGratuita/`](./TablaComparativaIAGGratuita) | Tabla comparativa en LaTeX, lista para adaptar. |
+| [`TablaComparativaIAGGratuita/`](./TablaComparativaIAGGratuita) | Tabla comparativa en LaTeX, lista para adaptar, con el PDF ya compilado. Verificada el 10-sep-2026. |
+| `Comparativa_Modelos_IA.pptx` | Presentación de apoyo, 11 diapositivas. Verificada el 10-sep-2026. |
 | [`Retos con IA Generativa en Parejas/`](./Retos%20con%20IA%20Generativa%20en%20Parejas) | Actividad de aula en parejas, con su banco de imágenes. |
-| `Comparativa_Modelos_IA.pptx` | Presentación de apoyo. |
 
-> ⚠️ **La comparativa que sigue tiene fecha.** Se elaboró con datos de 2025 y **no se ha reverificado**. Los planes gratuitos, las capacidades y las políticas de datos de estas herramientas cambian en cuestión de meses. Úsala como punto de partida, nunca como dato firme: verifica en la página oficial de cada proveedor antes de recomendar nada, siguiendo la lista de verificación enlazada arriba.
->
-> Los datos del capítulo 4 del libro se verificaron por última vez el **10 de septiembre de 2026**.
+## Comparativa de planes gratuitos
+
+**Verificada el 10 de septiembre de 2026 contra la documentación oficial de cada proveedor.**
+
+Esta tabla responde a las preguntas que un docente necesita resolver antes de mandar a un grupo a usar una herramienta. No pretende decir cuál es «la mejor»: eso depende de tu asignatura y caduca en meses.
+
+| Herramienta | Plan gratuito | Búsqueda web en el gratuito | Genera imágenes en el gratuito | Ejecuta código en el gratuito | Datos del gratuito usados para entrenar | Desde (USD/mes) |
+|---|---|---|---|---|---|---|
+| **ChatGPT** (OpenAI) | Sí, con límites | **Sí** ✅ | Sí, con límites | Sí, con límites | Sí por defecto; exclusión disponible | Go 8 · Plus · Pro |
+| **Claude** (Anthropic) | Sí, con límites | **Sí** ✅ | No | **Sí** ✅ | No por defecto; requiere consentimiento | Pro 20 (17 anual) |
+| **Gemini** (Google) | Sí, con límites | Sí | **Sí**, incluida edición | Sí | Sí por defecto; desactivarlo cuesta el historial | AI Plus 4,99 · AI Pro 19,99 |
+| **Mistral** (Vibe) | Sí, con límites | Sí, limitada | **Sí** | Sí, sesiones limitadas | Sí, con exclusión en la cuenta | Pro 14,99 · estudiante 5,99 |
+| **Grok** (xAI) | Sí | Sí | Limitada | — | No por defecto en grok.com; sí dentro de X | SuperGrok 30 (300 anual) |
+| DeepSeek | Sí | *sin verificar* | *sin verificar* | *sin verificar* | Sí por defecto; exclusión poco visible | — |
+| Qwen (Qwen Studio) | Sí | *no documentada* | Sí | *sin verificar* | *documentación limitada* | — |
+| Kimi (Moonshot) | Sí | *sin verificar* | *sin verificar* | *sin verificar* | *sin mecanismo claro de exclusión* | — |
+| Meta AI | Sí | Sí | Sí | No | Sí; exclusión compleja y sin garantía | — |
+
+### Tres cosas que conviene saber antes de recomendar
+
+**El plan gratuito ya no significa lo mismo en todas partes.** OpenAI anunció que empezará a probar publicidad en sus planes gratuito y Go para usuarios con sesión iniciada; los planes Pro, Business y Enterprise no la incluyen. Y en casi todos los proveedores, el plan gratuito es justamente aquel en el que los datos se usan para entrenar por defecto.
+
+**Aparecieron planes intermedios de bajo costo.** ChatGPT Go y Google AI Plus se dirigen al estudiante que agota el plan gratuito pero no puede pagar una suscripción completa. Suelen ser la recomendación más sensata para ese caso.
+
+**Mistral renombró su asistente a Vibe.** «Le Chat» sobrevive solo como nombre de la aplicación móvil en las tiendas.
+
+### Cuatro herramientas que no pudimos verificar
+
+DeepSeek, Qwen, Kimi y Meta AI aparecen con celdas marcadas como *sin verificar*, y merece explicarse por qué:
+
+| Herramienta | Obstáculo encontrado el 10-sep-2026 |
+|---|---|
+| Meta AI | El sitio **impide la consulta automatizada** mediante `robots.txt` |
+| DeepSeek | La portada no publica precios ni capacidades del servicio de consumo |
+| Qwen | Ahora **Qwen Studio**. Enumera capacidades pero no precios, y no menciona búsqueda web |
+| Kimi | Página en chino, sin precios accesibles |
+
+Preferimos dejar el hueco visible antes que rellenarlo con datos de terceros sin comprobar. Y vale la pena sacar la conclusión: **cuando una institución no puede determinar con certeza qué se hace con los datos de sus estudiantes, esa opacidad es en sí misma parte del riesgo de adoptar la herramienta.**
+
+### Sobre las fuentes
+
+Todos los datos marcados como verificados provienen de las páginas oficiales de precios, los términos de servicio o los centros de ayuda de cada proveedor. **Ninguno procede de blogs comparativos, agregadores de precios o páginas de afiliados**, que copian cifras de años anteriores sin comprobarlas y son la primera causa de que un docente recomiende una herramienta que ya cambió de condiciones.
+
+Una versión anterior de esta comparativa, elaborada en 2025, sí citaba ese tipo de fuentes. Se retiró por coherencia con lo que enseña el propio capítulo 4 del libro.
 
 ---
 
-## Comparativa de modelos de IA generativa (versiones gratuitas) — datos de 2025
+## Cómo mantener esta tabla al día
 
-| Servicio (gratuito)                                  | ¿Recibe **imágenes**?                                                                                                                                | ¿**Genera** imágenes?                                                                                                                                     | ¿“Deep search / deep research”?                                                                                                                                           | ¿Modo **estudio** (tipo “estudia y aprende”)?                 | **Búsqueda web**                                                                                      | **Búsqueda en documentos**                                                                                   |
-| ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| **ChatGPT (OpenAI)**                                 | **Limitado**: la ayuda de OpenAI indica que “image inputs” están en Plus/Enterprise; los *archivos* sí están en Free (límite diario) ([BytePlus][1]) | **Sí** (4o image generation disponible también para Free)                                                                                                 | **Sí** (Deep Research) con cupo limitado en Free según lanzamiento/actualizaciones ([X (formerly Twitter)][2])                                                            | **Sí** (Study Mode) disponible en la app, con límites en Free | **Sí** (ChatGPT Search; disponible incluso sin iniciar sesión) ([BytePlus][3])                        | **Sí** (subir y analizar archivos en Free, con límites) ([Analytics Vidhya][4])                              |
-| **Gemini (Google)**                                  | **Sí** (entrada multimodal) ([Google AI for Developers][5])                                                                                          | **Sí** (“Nano Banana”/Gemini Image; generar y **editar** imágenes en Apps) ([Google Ayuda][6])                                                            | **Sí** (Gemini **Deep Research**, “pruébalo sin costo”) ([Gemini][7])                                                                                                     | —                                                             | **Sí** (integrado) ([Gemini][8])                                                                      | **Sí** (desde feb-2025 los **free** pueden subir y analizar Docs/PDF, y también vía Drive) ([9to5Google][9]) |
-| **Claude (Anthropic)**                               | **Sí** (puedes subir imágenes) ([Centro de Ayuda Anthropic][10])                                                                                     | **No** (no produce imágenes) ([Centro de Ayuda de Anthropic][11])                                                                                         | **No** como “modo” aparte; **sí** tiene **Web Search** global en todas las cuentas (incl. Free) ([Anthropic][12])                                                         | —                                                             | **Sí** (Web Search) ([Anthropic][12])                                                                 | **Sí** (subida de archivos en Free; límites por tamaño/cantidad) ([Centro de Ayuda Anthropic][13])           |
-| **DeepSeek**                                         | **Sí** (modelos Janus para visión) *en app puede variar* ([GitHub][14])                                                                              | **Sí** (familia Janus para generación de imágenes; a veces vía terceros) ([Hugging Face][15])                                                             | **Sí** (chat con búsqueda web en su sitio, con límites) ([DeepSeek][16])                                                                                                  | —                                                             | **Sí** (tiempo real/“search”) ([DeepSeek][16])                                                        | **Sí** (lectura de archivos en el chat) ([DeepSeek][17])                                                     |
-| **Grok (xAI)**                                       | **Sí** (capacidad de comprensión de imágenes en Grok 3/4) ([xAI][18])                                                                                | **Limitado**: **Grok Imagine** (imagen/video) existe pero el acceso pleno suele ser **de pago** (SuperGrok/Premium+); free con recortes ([The Verge][19]) | **Sí** (DeepSearch/DeeperSearch; con cuotas en free) ([Reddit][20])                                                                                                       | —                                                             | **Sí** (búsqueda en tiempo real integrada) ([xAI][21])                                                | —                                                                                                            |
-| **Qwen Chat (Alibaba)**                              | **Sí** (imagen y **video** understanding) ([Qwen Chat][22])                                                                                          | **Sí** (Qwen-Image; gratuito en chat) ([Qwen][23])                                                                                                        | —                                                                                                                                                                         | —                                                             | **Sí** (integrado) ([Qwen Chat][22])                                                                  | **Sí** (procesamiento de documentos) ([Qwen][24])                                                            |
-| **Kimi (Moonshot AI)**                               | **Sí** (visión; Kimi Vision/API y app multimodal) ([platform.moonshot.ai][25])                                                                       | **No confirmado** en la app de consumo (Kimi destaca **visión/entendimiento**, no un generador propio) ([platform.moonshot.ai][25])                       | **Sí**: búsqueda en línea; y **Kimi Researcher** (agente de investigación) aparece como función del servicio (a menudo con plan de pago/uso limitado) ([moonshot.ai][26]) | —                                                             | **Sí** (online search) ([moonshot.ai][26])                                                            | **Sí** (muy largo contexto y manejo de archivos; detalles en reseñas) ([Cursor IDE中文站][27])                  |
-| **Meta AI (meta.ai / Instagram/WhatsApp/Messenger)** | **Sí** (puedes **preguntar por una foto** que envías al chat) ([Centro de ayuda de Instagram][28])                                                   | **Sí** (generar y **editar** imágenes/GIFs gratis en sus apps y web) ([Meta][29])                                                                         | —                                                                                                                                                                         | —                                                             | **Sí** (“capacidad de **buscar a través de la web**” en la app de Meta AI) ([Acerca de Facebook][30]) | —                                                                                                            |
-
-**Notas rápidas y matices importantes**
-
-* En **ChatGPT Free**, *cargar archivos* está permitido con cupos; **“image input”** como tal aparece en la ayuda para **Plus/Enterprise**. Para tus actividades con imágenes en ChatGPT Free, mejor usa **generación** (sí disponible) y **Search** para la parte de web. ([Analytics Vidhya][4])
-* **Gemini** hoy es el más “todo-en-uno” gratis: visión, **generación/edición** de imágenes (“Nano Banana”), **Deep Research** y **análisis de documentos** en cuentas gratuitas (recientemente habilitado). Ideal para los equipos que harán retos multimodales. ([Gemini][7])
-* **Claude** no genera imágenes, pero es excelente en **análisis** de imágenes/documentos + **Web Search** con citas (gratis). Perfecto para el grupo “investigación con fuentes”. ([Centro de Ayuda de Anthropic][11])
-* **Grok** tiene **DeepSearch** muy motivante para los chicos, pero su **generación** visual potente (**Grok Imagine**) suele requerir suscripción; el plan gratuito tiene límites de uso. ([The Verge][19])
-* **Kimi** trae **Researcher** (tipo “deep research”) y **visión**; la generación de imágenes en el cliente público no está documentada como disponible. Disponibilidad puede variar por región/idioma. ([Wikipedia][31])
-* **Meta AI** es muy útil si tus estudiantes ya usan WhatsApp/Instagram: **subes una foto y preguntas**, o pides que **genere** imágenes en el mismo chat. También “mira” la web. ([Centro de ayuda de Instagram][28])
-
-
-1. https://www.byteplus.com/en/topic/418442?utm_source=chatgpt.com "How to Use Qwen 2.5 Max AI Online for Free in 2025"
-2. https://x.com/Alibaba_Qwen/status/1958506067324960816?utm_source=chatgpt.com "Discover Deep Research in Qwen Chat for free!"
-3. https://www.byteplus.com/en/topic/418429?utm_source=chatgpt.com "Qwen Chat DeepSearch AI. Advanced AI Assistant 2025"
-4. https://www.analyticsvidhya.com/blog/2025/08/qwen-image/?utm_source=chatgpt.com "Qwen-Image. Alibaba's Free Image Generation Model is ..."
-5. https://ai.google.dev/gemini-api/docs/image-generation?utm_source=chatgpt.com "Image generation with Gemini (aka Nano Banana) - Gemini API"
-6. https://support.google.com/gemini/answer/14286560?co=GENIE.Platform%3DDesktop&hl=en&utm_source=chatgpt.com "Generate & edit images with Gemini Apps - Computer"
-7. https://gemini.google/overview/deep-research/?utm_source=chatgpt.com "Gemini Deep Research — your personal research assistant"
-8. https://gemini.google.com/?utm_source=chatgpt.com "Google Gemini"
-9. https://9to5google.com/2025/02/25/free-gemini-document-upload/?utm_source=chatgpt.com "Free Gemini users can now upload, analyze documents U"
-10. https://support.anthropic.com/en/collections/4078531-claude?utm_source=chatgpt.com "Claude | Anthropic Help Center"
-11. https://support.claude.com/en/articles/9002504-can-claude-produce-images?utm_source=chatgpt.com "Can Claude produce images? - Anthropic Help Center"
-12. https://www.anthropic.com/news/web-search?utm_source=chatgpt.com "Claude can now search the web"
-13. https://support.anthropic.com/en/articles/8114491-getting-started-with-claude?utm_source=chatgpt.com "Getting started with Claude | Anthropic Help Center"
-14. https://github.com/deepseek-ai/Janus?utm_source=chatgpt.com "Janus-Series: Unified Multimodal Understanding and ..."
-15. https://huggingface.co/deepseek-ai/Janus-Pro-7B?utm_source=chatgpt.com "deepseek-ai/Janus-Pro-7B"
-16. https://www.deepseek.com/en?utm_source=chatgpt.com "DeepSeek"
-17. https://chat.deepseek.com/?utm_source=chatgpt.com "DeepSeek"
-18. https://x.ai/news/grok-3?utm_source=chatgpt.com "Grok 3 Beta — The Age of Reasoning Agents"
-19. https://www.theverge.com/news/718795/xai-grok-imagine-video-generator-spicy-mode?utm_source=chatgpt.com "xAI's new Grok image and video generator has a 'spicy' mode"
-20. https://www.reddit.com/r/grok/comments/1jpjmy6/free_tier_limits_as_of_2nd_april_2025/?utm_source=chatgpt.com "Free Tier Limits (as of 2nd April 2025) - grok"
-21. https://x.ai/?utm_source=chatgpt.com "xAI: Welcome"
-22. https://chat.qwen.ai/?utm_source=chatgpt.com "Qwen Chat"
-23. https://qwenlm.github.io/blog/qwen-image/?utm_source=chatgpt.com "Qwen-Image: Crafting with Native Text Rendering"
-24. https://qwen.ai/download?utm_source=chatgpt.com "Download Qwen"
-25. https://platform.moonshot.ai/docs/guide/use-kimi-vision-model?utm_source=chatgpt.com "Use the Kimi Vision Model - Moonshot AI Open Platform"
-26. https://www.moonshot.ai/?utm_source=chatgpt.com "Moonshot AI"
-27. https://www.cursor-ide.com/blog/kimi-ai-review-2025?utm_source=chatgpt.com "Kimi AI Review 2025. 2 Million Character Context ... - Cursor IDE"
-28. https://help.instagram.com/3820477441501878/?helpref=related_articles&utm_source=chatgpt.com "Ask Meta AI about an image you share in a chat on Instagram"
-29. https://www.meta.com/help/artificial-intelligence/1337455336906126/?srsltid=AfmBOoqo5457O5J2Xu7mupXKCYU-JoqEjaiWWYAOAsGuuhxzYajGnIqG&utm_source=chatgpt.com "Generate images using Meta AI | Meta Help Center"
-30. https://about.fb.com/news/2025/04/introducing-meta-ai-app-new-way-access-ai-assistant/?utm_source=chatgpt.com "Introducing the Meta AI App: A New Way to Access Your AI ..."
-31. https://en.wikipedia.org/wiki/Kimi_%28chatbot%29?utm_source=chatgpt.com "Kimi (chatbot)"
+Rehazla al inicio de cada semestre con la [lista de verificación](./Lista_verificacion_herramientas.md). Son quince minutos y evita la situación más incómoda: haber mandado a media clase a una herramienta que cambió de condiciones a mitad de curso.

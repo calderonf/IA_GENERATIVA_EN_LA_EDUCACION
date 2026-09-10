@@ -26,7 +26,7 @@ NOTA: tambien puedes dar click en este link [documento compartido en google cola
 
 ---
 
-## 🧠 ¿Cómo interpretar la salida?
+## 🧠 ¿Cómo interpretar la salida
 
 * El modelo termina en una **sigmoid** → devuelve un valor **p ∈ \[0, 1]**.
 * **Umbral 0.5** (por defecto aquí):
@@ -57,7 +57,7 @@ python LSTM_imdb.py
 
 ---
 
-## 🧱 ¿Qué hace cada componente?
+## 🧱 ¿Qué hace cada componente
 
 * **`Embedding(V, d, mask_zero=True)`**: convierte índices en vectores densos y **enmascara** el padding para que la LSTM lo ignore. ([TensorFlow][5])
 * **`Bidirectional(LSTM(units))`**: procesa la secuencia izquierda→derecha y derecha→izquierda y concatena estados. Suele mejorar señales contextuales. ([keras.io][6])
@@ -116,10 +116,10 @@ print(p, label)
 
 ---
 
-[1]: https://keras.io/api/datasets/imdb/?utm_source=chatgpt.com "IMDB movie review sentiment classification dataset"
-[2]: https://colab.research.google.com/notebooks/pro.ipynb?utm_source=chatgpt.com "Making the Most of your Colab Subscription - Google"
-[3]: https://keras.io/api/layers/recurrent_layers/lstm/?utm_source=chatgpt.com "LSTM layer"
-[4]: https://www.tensorflow.org/api_docs/python/tf/keras/utils/pad_sequences?utm_source=chatgpt.com "tf.keras.utils.pad_sequences | TensorFlow v2.16.1"
-[5]: https://www.tensorflow.org/guide/keras/understanding_masking_and_padding?utm_source=chatgpt.com "Understanding masking & padding | TensorFlow Core"
-[6]: https://keras.io/api/layers/recurrent_layers/bidirectional/?utm_source=chatgpt.com "Bidirectional layer"
-[7]: https://keras.io/api/callbacks/early_stopping/?utm_source=chatgpt.com "EarlyStopping"
+[1]: https://keras.io/api/datasets/imdb/ "IMDB movie review sentiment classification dataset"
+[2]: https://colab.research.google.com/notebooks/pro.ipynb "Making the Most of your Colab Subscription - Google"
+[3]: https://keras.io/api/layers/recurrent_layers/lstm/ "LSTM layer"
+[4]: https://www.tensorflow.org/api_docs/python/tf/keras/utils/pad_sequences "tf.keras.utils.pad_sequences | TensorFlow v2.16.1"
+[5]: https://www.tensorflow.org/guide/keras/understanding_masking_and_padding "Understanding masking & padding | TensorFlow Core"
+[6]: https://keras.io/api/layers/recurrent_layers/bidirectional/ "Bidirectional layer"
+[7]: https://keras.io/api/callbacks/early_stopping/ "EarlyStopping"

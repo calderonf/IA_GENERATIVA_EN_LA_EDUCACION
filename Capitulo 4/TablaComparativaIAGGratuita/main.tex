@@ -1,50 +1,85 @@
 \documentclass[a4paper,10pt]{article}
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage[landscape, margin=1.5cm]{geometry}
 \usepackage{array}
 \usepackage{tabularx}
 \usepackage{hyperref}
-\usepackage{colortbl}
-\usepackage{xcolor}
+% xcolor con la opcion table: es la que define \rowcolors y carga colortbl.
+% Sin ella el documento no compila (el archivo original tenia este fallo).
+\usepackage[table]{xcolor}
 
 \begin{document}
 
 \section*{Comparativa de Modelos de IA Generativa (Versiones Gratuitas)}
 
-Este documento resume las características de varias plataformas de IA generativa gratuitas.  
-Se incluyen capacidades multimodales, generación de imágenes, búsqueda web/documentos y modos especiales como \textit{Deep Search} o \textit{Study Mode}.
+Material complementario del \textbf{capítulo 4} de \textit{Inteligencia artificial generativa en la Educación}.
 
-\vspace{0.5cm}
+\textbf{Verificado el 10 de septiembre de 2026} contra la documentación oficial de cada proveedor.
+Las filas marcadas con $\dagger$ se comprobaron en esa fecha; las demás proceden de revisiones
+anteriores y \textbf{no pudieron reverificarse} porque sus proveedores no publican esta información
+de forma accesible. Las celdas con «---» indican dato no confirmado.
+
+\textbf{Este documento caduca.} Los planes gratuitos y sus límites cambian en cuestión de meses.
+Antes de recomendar una herramienta a un estudiante, contrasta con la página oficial del proveedor
+siguiendo la lista de verificación del repositorio.
+
+\vspace{0.4cm}
 
 \rowcolors{2}{gray!10}{white}
 \begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|
->{\centering\arraybackslash}m{2.5cm}|
->{\centering\arraybackslash}m{2.5cm}|
->{\centering\arraybackslash}m{2.5cm}|
->{\centering\arraybackslash}m{2.5cm}|
->{\centering\arraybackslash}m{2.5cm}|
->{\centering\arraybackslash}m{2.5cm}|
+>{\centering\arraybackslash}m{2.3cm}|
+>{\centering\arraybackslash}m{2.3cm}|
+>{\centering\arraybackslash}m{2.3cm}|
+>{\centering\arraybackslash}m{2.3cm}|
+>{\centering\arraybackslash}m{2.1cm}|
+>{\centering\arraybackslash}m{2.1cm}|
 >{\raggedright\arraybackslash}X|}
 \hline
-\rowcolor{blue!40} 
-\textbf{Modelo} & \textbf{Entrada imágenes} & \textbf{Genera imágenes} & \textbf{Deep search} & \textbf{Modo estudiante} & \textbf{Búsqueda web} & \textbf{Búsqueda en docs} & \textbf{Enlace} \\
+\rowcolor{blue!40}
+\textbf{Modelo} & \textbf{Entrada imágenes} & \textbf{Genera imágenes} & \textbf{Deep search} & \textbf{Ejecuta código} & \textbf{Búsqueda web} & \textbf{Datos usados para entrenar} & \textbf{Enlace} \\
 \hline
-ChatGPT & Limitado (Plus/Enterprise) & Sí (DALL·E con límite) & Sí (limitado en Free) & Sí (Study Mode) & Sí & Sí & \href{https://chat.openai.com}{chat.openai.com} \\
+ChatGPT $\dagger$ & Sí, con límites & Sí, con límites & Sí (Deep Research) & Sí, con límites & \textbf{Sí} & Sí, por defecto & \href{https://chatgpt.com}{chatgpt.com} \\
 \hline
-Gemini & Sí & Sí (Nano Banana) & Sí (Deep Research) & No formal & Sí & Sí & \href{https://gemini.google.com}{gemini.google.com} \\
+Claude $\dagger$ & Sí & No & No, pero con búsqueda web & \textbf{Sí} & \textbf{Sí} & No por defecto & \href{https://claude.ai}{claude.ai} \\
 \hline
-Claude & Sí & No & No (pero Web Search) & Explicaciones paso a paso & Sí & Sí & \href{https://claude.ai}{claude.ai} \\
+Gemini $\dagger$ & Sí & Sí, genera y edita & Sí (Deep Research) & Sí & Sí & Sí, por defecto & \href{https://gemini.google.com}{gemini.google.com} \\
 \hline
-DeepSeek & Sí (Janus) & Sí (Janus) & Sí (chat con web) & No formal & Sí & Sí & \href{https://chat.deepseek.com}{chat.deepseek.com} \\
+Mistral (Vibe) $\dagger$ & Sí & Sí & --- & Sí, sesiones limitadas & Sí, limitada & Sí, con exclusión & \href{https://mistral.ai}{mistral.ai} \\
 \hline
-Grok & Sí (modelos nuevos) & Limitado (Imagine pago) & Sí (DeepSearch) & No formal & Sí & — & \href{https://x.ai}{x.ai} \\
+Grok $\dagger$ & Sí & Limitada & Sí (DeepSearch) & --- & Sí & No por defecto & \href{https://grok.com}{grok.com} \\
 \hline
-Qwen & Sí (imagen+video) & Sí (Qwen-Image) & Sí (Deep Research free) & Explicaciones paso a paso & Sí & Sí & \href{https://chat.qwen.ai}{chat.qwen.ai} \\
+DeepSeek & Sí & --- & Sí, chat con web & --- & --- & Sí, por defecto & \href{https://chat.deepseek.com}{chat.deepseek.com} \\
 \hline
-Kimi & Sí (visión multimodal) & No & Sí (Researcher) & No formal & Sí & Sí & \href{https://kimi.moonshot.cn}{kimi.moonshot.cn} \\
+Qwen Studio & Sí, imagen y vídeo & Sí & --- & --- & No documentada & Documentación limitada & \href{https://chat.qwen.ai}{chat.qwen.ai} \\
 \hline
-Meta AI & Sí (fotos en chat) & Sí (genera/edita) & No & No formal & Sí & — & \href{https://www.meta.ai}{meta.ai} \\
+Kimi & Sí & --- & Sí (Researcher) & --- & --- & Sin exclusión clara & \href{https://www.kimi.com}{kimi.com} \\
+\hline
+Meta AI & Sí, fotos en chat & Sí, genera y edita & No & No & Sí & Sí, exclusión compleja & \href{https://www.meta.ai}{meta.ai} \\
 \hline
 \end{tabularx}
+
+\vspace{0.5cm}
+
+\noindent\textbf{Tres advertencias.}
+
+\begin{enumerate}
+  \item \textbf{Gratuito ya no significa lo mismo en todas partes.} OpenAI anunció que empezará a
+  probar publicidad en sus planes gratuito y Go; los planes Pro, Business y Enterprise no la
+  incluyen. Y en casi todos los proveedores el plan gratuito es justamente aquel en el que los datos
+  se usan para entrenamiento por defecto.
+  \item \textbf{Existen planes intermedios de bajo costo.} ChatGPT Go y Google AI Plus se dirigen al
+  estudiante que agota el plan gratuito sin poder pagar una suscripción completa.
+  \item \textbf{Mistral renombró su asistente a Vibe.} «Le Chat» sobrevive solo como nombre de la
+  aplicación móvil en las tiendas.
+\end{enumerate}
+
+\vspace{0.3cm}
+
+\noindent\textbf{Sobre las cuatro filas sin $\dagger$.} DeepSeek, Qwen, Kimi y Meta AI no pudieron
+verificarse: Meta AI impide la consulta automatizada de su sitio, y las otras tres no publican
+precios ni capacidades del servicio de consumo de forma accesible. Preferimos dejar el hueco visible
+antes que rellenarlo con datos de terceros sin comprobar. Esa opacidad es, en sí misma, parte del
+riesgo de adoptar una herramienta en una institución.
 
 \end{document}
