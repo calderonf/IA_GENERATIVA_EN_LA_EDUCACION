@@ -17,14 +17,14 @@ Esta tabla responde a las preguntas que un docente necesita resolver antes de ma
 
 | Herramienta | Plan gratuito | Búsqueda web en el gratuito | Genera imágenes en el gratuito | Ejecuta código en el gratuito | Datos del gratuito usados para entrenar | Desde (USD/mes) |
 |---|---|---|---|---|---|---|
-| **ChatGPT** (OpenAI) | Sí, con límites | **Sí** ✅ | Sí, con límites | Sí, con límites | Sí por defecto; exclusión disponible | Go 8 · Plus · Pro |
+| **ChatGPT** (OpenAI) | Sí, con límites | **Sí** ✅ | Sí, con límites | Sí, con límites | Sí por defecto; exclusión disponible | Go 8 · Plus 20 · Pro desde 100 |
 | **Claude** (Anthropic) | Sí, con límites | **Sí** ✅ | No | **Sí** ✅ | No por defecto; requiere consentimiento | Pro 20 (17 anual) |
 | **Gemini** (Google) | Sí, con límites | Sí | **Sí**, incluida edición | Sí | Sí por defecto; desactivarlo cuesta el historial | AI Plus 4,99 · AI Pro 19,99 |
 | **Mistral** (Vibe) | Sí, con límites | Sí, limitada | **Sí** | Sí, sesiones limitadas | Sí, con exclusión en la cuenta | Pro 14,99 · estudiante 5,99 |
 | **Grok** (xAI) | Sí | Sí | Limitada | — | No por defecto en grok.com; sí dentro de X | SuperGrok 30 (300 anual) |
 | DeepSeek | Sí | Sí | Sí (modelos Janus) ᴰ | *sin verificar* | Sí por defecto; exclusión poco visible | — |
 | Qwen (Qwen Studio) | Sí | *no documentada* | Sí (Qwen-Image) ᴰ | *sin verificar* | *documentación limitada* | — |
-| Kimi (Moonshot) | Sí | *sin verificar* | No documentada | *sin verificar* | *sin mecanismo claro de exclusión* | — |
+| Kimi (Moonshot) | Sí | *sin verificar* | No documentada | *sin verificar* | *sin mecanismo claro de exclusión* | Moderato 19 ⏳ |
 | Meta AI | Sí | Sí | Sí | No | Sí; exclusión compleja y sin garantía | — |
 
 ### Tres cosas que conviene saber antes de recomendar
@@ -39,7 +39,9 @@ Esta tabla responde a las preguntas que un docente necesita resolver antes de ma
 
 DeepSeek, Qwen, Kimi y Meta AI aparecen con varias celdas marcadas como *sin verificar*, y conviene precisar qué falta exactamente, porque no es todo.
 
-**Sus capacidades sí están documentadas oficialmente**, y las fuentes están más abajo en el nivel 1: DeepSeek publica los modelos Janus en su repositorio y su ficha de modelo; Qwen documenta Qwen-Image en su blog de ingeniería; Moonshot publica la documentación del modelo de visión de Kimi; Meta describe en sus centros de ayuda cómo generar imágenes y preguntar por una foto en el chat. Las celdas marcadas con **ᴰ** se apoyan en esa documentación oficial, aunque sea de 2025.
+**Sus capacidades sí están documentadas oficialmente**, y las fuentes están más abajo en el nivel 1: DeepSeek publica los modelos Janus en su repositorio y su ficha de modelo; Qwen documenta Qwen-Image en su blog de ingeniería; Moonshot publica la documentación del modelo de visión de Kimi; Meta describe en sus centros de ayuda cómo generar imágenes y preguntar por una foto en el chat.
+
+**⏳ Kimi es un caso aparte.** Sí publica sus planes ---Moderato 19, Allegretto 39, Allegro 99 y Vivace 199 USD al mes, con descuento por pago anual--- pero en la fecha de verificación los cuatro se ofrecían mediante **lista de espera**, no por contratación directa. No planifiques una actividad contando con un plan al que tus estudiantes quizá no puedan acceder cuando lo necesiten. Las celdas marcadas con **ᴰ** se apoyan en esa documentación oficial, aunque sea de 2025.
 
 **Lo que no pudimos establecer son las condiciones comerciales**: qué se ofrece exactamente en el plan gratuito, con qué límites, a qué precio y bajo qué política de datos. Que un modelo exista y esté documentado no significa que esté disponible sin pagar, ni que lo siga estando el próximo semestre.
 
