@@ -1,5 +1,21 @@
-# Comparativa de Modelos de IA Generativa (Versiones Gratuitas)
+# Capítulo 4 — Materiales complementarios
 
+Complementos del **capítulo 4** de *Inteligencia artificial generativa en la Educación*: herramientas de IA generativa gratuitas en línea y cómo citarlas.
+
+| Archivo | Qué es |
+|---|---|
+| [`Lista_verificacion_herramientas.md`](./Lista_verificacion_herramientas.md) | Lista de verificación completa y plantilla de registro para comprobar una herramienta antes de recomendarla a un estudiante. Versión extendida de la que aparece resumida en el libro. |
+| [`TablaComparativaIAGGratuita/`](./TablaComparativaIAGGratuita) | Tabla comparativa en LaTeX, lista para adaptar. |
+| [`Retos con IA Generativa en Parejas/`](./Retos%20con%20IA%20Generativa%20en%20Parejas) | Actividad de aula en parejas, con su banco de imágenes. |
+| `Comparativa_Modelos_IA.pptx` | Presentación de apoyo. |
+
+> ⚠️ **La comparativa que sigue tiene fecha.** Se elaboró con datos de 2025 y **no se ha reverificado**. Los planes gratuitos, las capacidades y las políticas de datos de estas herramientas cambian en cuestión de meses. Úsala como punto de partida, nunca como dato firme: verifica en la página oficial de cada proveedor antes de recomendar nada, siguiendo la lista de verificación enlazada arriba.
+>
+> Los datos del capítulo 4 del libro se verificaron por última vez el **10 de septiembre de 2026**.
+
+---
+
+## Comparativa de modelos de IA generativa (versiones gratuitas) — datos de 2025
 
 | Servicio (gratuito)                                  | ¿Recibe **imágenes**?                                                                                                                                | ¿**Genera** imágenes?                                                                                                                                     | ¿“Deep search / deep research”?                                                                                                                                           | ¿Modo **estudio** (tipo “estudia y aprende”)?                 | **Búsqueda web**                                                                                      | **Búsqueda en documentos**                                                                                   |
 | ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
