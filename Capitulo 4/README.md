@@ -35,7 +35,7 @@ Esta tabla responde a las preguntas que un docente necesita resolver antes de ma
 
 **Mistral renombró su asistente a Vibe.** «Le Chat» sobrevive solo como nombre de la aplicación móvil en las tiendas.
 
-### Cuatro herramientas: capacidades sí, condiciones comerciales no
+### Tres herramientas: qué se sabe y qué no
 
 DeepSeek, Qwen, Kimi y Meta AI aparecen con varias celdas marcadas como *sin verificar*, y conviene precisar qué falta exactamente, porque no es todo.
 
@@ -43,14 +43,31 @@ DeepSeek, Qwen, Kimi y Meta AI aparecen con varias celdas marcadas como *sin ver
 
 **⏳ Kimi es un caso aparte.** Sí publica sus planes ---Moderato 19, Allegretto 39, Allegro 99 y Vivace 199 USD al mes, con descuento por pago anual--- pero en la fecha de verificación los cuatro se ofrecían mediante **lista de espera**, no por contratación directa. No planifiques una actividad contando con un plan al que tus estudiantes quizá no puedan acceder cuando lo necesiten. Las celdas marcadas con **ᴰ** se apoyan en esa documentación oficial, aunque sea de 2025.
 
-**Lo que no pudimos establecer son las condiciones comerciales**: qué se ofrece exactamente en el plan gratuito, con qué límites, a qué precio y bajo qué política de datos. Que un modelo exista y esté documentado no significa que esté disponible sin pagar, ni que lo siga estando el próximo semestre.
+**También sabemos lo que cobran.** DeepSeek, Qwen y Meta no venden suscripción mensual al usuario final: cobran **por consumo, en tokens**, y publican sus tarifas con detalle. Un token equivale a unas tres cuartas partes de una palabra en español, así que un millón de tokens son unas 750 000 palabras.
+
+| Servicio | Modelo | Entrada (USD/1M) | Salida (USD/1M) |
+|---|---|---|---|
+| DeepSeek | deepseek-flash | 0,15–0,30 | 0,60–1,20 |
+| DeepSeek | deepseek-v4-pro | 0,66–1,32 | 1,98–3,96 |
+| Qwen | qwen3.8-max | 2,00 | 6,00 |
+| Qwen | qwen3.7-max | 2,50 | 7,50 |
+| Meta | modelo estándar | 1,25 | 4,25 |
+| Meta | modelo ligero | 0,10 | 0,20 |
+
+DeepSeek aplica precios distintos según la franja horaria, y las tres ofrecen descuentos fuertes cuando la entrada ya está en caché. Un detalle que conviene tener presente: el costo real depende sobre todo de cuánto **genere** la herramienta, no de cuánto le des a leer.
+
+> ⚠️ **La cuota gratuita de Qwen solo existe en Singapur.** Alibaba ofrece un millón de tokens de prueba válidos 90 días, pero su documentación repite de forma explícita que *«No free quota is available in other regions»*. Si planificas un piloto desde Latinoamérica contando con esa prueba gratuita, no la vas a tener.
+
+**Lo que sigue sin poder establecerse** es qué ofrecen exactamente sus **aplicaciones gratuitas de consumo**: con qué límites diarios, bajo qué política de datos y hasta cuándo. Publican con detalle lo que le cobran a un desarrollador, pero no los límites de la aplicación sin costo que usará tu estudiante.
+
+**El caso de Meta lo ilustra bien.** Su documentación para desarrolladores publica tarifas precisas, pero sus planes de consumo —agrupados bajo **Meta One**, con niveles **Core** y **Premium**— están *en pruebas limitadas* y su centro de ayuda **no publica ningún importe**, porque el cobro pasa por la tienda de aplicaciones y varía por país. En prensa circulan cifras concretas para esos planes que ni siquiera coinciden con los nombres de la documentación oficial. Cuando una empresa no ha publicado un precio, lo que circula no es información: es especulación.
 
 | Herramienta | Obstáculo encontrado el 10-sep-2026 |
 |---|---|
 | Meta AI | El sitio **impide la consulta automatizada** mediante `robots.txt` |
-| DeepSeek | La portada no publica precios ni capacidades del servicio de consumo |
-| Qwen | Ahora **Qwen Studio**. Enumera capacidades pero no precios, y no menciona búsqueda web |
-| Kimi | Página en chino, sin precios accesibles |
+| DeepSeek | La portada no publica los límites de la **aplicación gratuita**; sus tarifas de API sí están publicadas |
+| Qwen | Ahora **Qwen Studio**. Enumera capacidades pero no los límites del uso gratuito, y no menciona búsqueda web |
+| Kimi | *(resuelto: publica sus cuatro planes, en lista de espera — ver arriba)* |
 
 Preferimos dejar el hueco visible antes que rellenarlo con datos de terceros sin comprobar.
 
