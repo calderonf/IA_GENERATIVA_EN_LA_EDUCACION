@@ -1,0 +1,67 @@
+# docker-compose-monitoring.yml
+# ---------------------------------------------------------------------------
+# Stack de monitoreo para un servidor Ollama institucional: Prometheus +
+# Grafana + node_exporter (métricas de host) + el exportador propio del
+# Capítulo 5 (ollama_health_exporter.py) que traduce la API de Ollama a
+# métricas Prometheus.
+#
+# Uso:
+#   docker compose -f docker-compose-monitoring.yml up -d
+#
+# Luego abre Grafana en http://localhost:3001 (usuario/clave por defecto:
+# admin/admin, se pide cambiarla al primer ingreso) e importa
+# grafana-dashboard-ollama.json como dashboard.
+# ---------------------------------------------------------------------------
+services:
+  ollama_health_exporter:
+    build:
+      context: .
+      dockerfile_inline: |
+        FROM python:3.12-slim
+        COPY ollama_health_exporter.py /app/ollama_health_exporter.py
+        ENTRYPOINT ["python3", "/app/ollama_health_exporter.py"]
+    container_name: ollama_health_exporter
+    restart: unless-stopped
+    command: ["--ollama-url", "${OLLAMA_URL:-http://host.docker.internal:11434}", "--port", "9273"]
+    ports:
+      - "9273:9273"
+
+  node_exporter:
+    image: prom/node-exporter:latest
+    container_name: node_exporter
+    restart: unless-stopped
+    ports:
+      - "9100:9100"
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    restart: unless-stopped
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+    ports:
+      - "9090:9090"
+    depends_on:
+      - ollama_health_exporter
+      - node_exporter
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    restart: unless-stopped
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    ports:
+      - "3001:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+    depends_on:
+      - prometheus
+
+volumes:
+  prometheus_data:
+  grafana_data:

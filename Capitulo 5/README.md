@@ -191,26 +191,25 @@ Este directorio contiene recursos adicionales, scripts de ejemplo y materiales d
 
 ## 🔧 Scripts y Herramientas
 
-### Scripts de Instalación Automatizada
+Todo el material de esta sección está disponible y probado en esta misma carpeta del repositorio (no son enlaces externos).
 
-```bash
-# Próximamente: scripts listos para usar
-# - install_ollama_ubuntu.sh
-# - setup_openwebui_docker.sh
-# - configure_multiuser_ollama.sh
-```
+### Scripts de instalación automatizada (`scripts/`)
+- **[install_ollama_ubuntu.sh](scripts/install_ollama_ubuntu.sh)**: instala Ollama en un servidor Linux y lo deja configurado para acceso multiusuario (directorio de modelos compartido, systemd, verificación final).
+- **[configure_multiuser_ollama.sh](scripts/configure_multiuser_ollama.sh)**: reconfigura una instalación de Ollama ya existente para habilitar acceso multiusuario, con soporte opcional de proxy institucional.
+- **[setup_openwebui_docker.sh](scripts/setup_openwebui_docker.sh)**: despliega OpenWebUI en Docker conectado a un servidor Ollama (local o remoto).
 
-### Configuraciones de Ejemplo
+### Plantillas de configuración (`plantillas/`)
+- **[docker-compose-openwebui.yml](plantillas/docker-compose-openwebui.yml)**: OpenWebUI listo para producción educativa (cuenta de administrador inicial, registro cerrado).
+- **[systemd-ollama-override.conf](plantillas/systemd-ollama-override.conf)**: plantilla de referencia para `ollama.service.d/override.conf` (acceso multiusuario, directorio compartido de modelos).
+- **[proxy-institucional.env](plantillas/proxy-institucional.env)**: variables de proxy para redes universitarias con proxy corporativo saliente.
 
-```yaml
-# docker-compose.yml para OpenWebUI + Ollama
-# Archivo de ejemplo disponible en este repositorio
-```
+### Paneles de monitoreo (`monitoreo/`)
+- **[docker-compose-monitoring.yml](monitoreo/docker-compose-monitoring.yml)**: stack completo de Prometheus + Grafana + node\_exporter + un exportador propio para Ollama.
+- **[ollama_health_exporter.py](monitoreo/ollama_health_exporter.py)**: exportador Prometheus ligero (sin dependencias externas) que traduce la API de Ollama (`/api/ps`) a métricas estándar, porque Ollama no expone un endpoint `/metrics` nativo.
+- **[prometheus.yml](monitoreo/prometheus.yml)** y **[grafana-dashboard-ollama.json](monitoreo/grafana-dashboard-ollama.json)**: configuración de scraping y un dashboard de Grafana listo para importar.
 
-### Herramientas de Monitoreo
-- Script de verificación de recursos (RAM/VRAM)
-- Dashboard de Grafana para LLMs locales
-- Logging configurado para instituciones educativas
+### Guía de solución de problemas
+- **[guia_solucion_problemas.md](guia_solucion_problemas.md)**: cubre Ollama, LM Studio, OpenWebUI y el stack de monitoreo (conectividad, firewall, GPU no detectada, errores de memoria, y más).
 
 ---
 
@@ -342,8 +341,8 @@ Consultar [LICENSE](../LICENSE) en el repositorio raíz.
 
 ## 🔄 Última Actualización
 
-**Fecha**: Octubre 2025  
-**Versión del Capítulo**: 1.0  
+**Fecha**: Septiembre 2026  
+**Versión del Capítulo**: 1.1 — se añadieron scripts, plantillas, monitoreo y guía de solución de problemas reales (antes solo enlaces)  
 **Mantenedor**: Francisco Calderón
 
 > **Nota**: Los enlaces y recursos son verificados periódicamente, pero la naturaleza rápida del ecosistema LLM puede hacer que algunos recursos cambien o desaparezcan. Por favor reporta enlaces rotos via Issues.

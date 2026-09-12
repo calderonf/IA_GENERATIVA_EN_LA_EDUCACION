@@ -1,0 +1,26 @@
+# prometheus.yml
+# ---------------------------------------------------------------------------
+# Configuración mínima de Prometheus para monitorear un servidor Ollama
+# mediante ollama_health_exporter.py, más las métricas de hardware del host
+# vía node_exporter (RAM, CPU, disco; para VRAM de NVIDIA ver la nota abajo).
+# ---------------------------------------------------------------------------
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: "ollama_health_exporter"
+    static_configs:
+      - targets: ["ollama_health_exporter:9273"]
+
+  - job_name: "node_exporter"
+    static_configs:
+      - targets: ["node_exporter:9100"]
+
+  # Métricas de GPU NVIDIA (VRAM, temperatura, utilización): requiere
+  # desplegar por separado el exportador oficial de NVIDIA DCGM
+  # (github.com/NVIDIA/dcgm-exporter). No se incluye en este stack por
+  # defecto porque depende del NVIDIA Container Toolkit en el host; ver
+  # guia_solucion_problemas.md, sección "Monitoreo de GPU", para instrucciones.
+  # - job_name: "dcgm_exporter"
+  #   static_configs:
+  #     - targets: ["dcgm_exporter:9400"]

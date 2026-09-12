@@ -1,0 +1,32 @@
+# docker-compose-openwebui.yml
+# ---------------------------------------------------------------------------
+# Plantilla mínima para desplegar OpenWebUI conectado a un servidor Ollama
+# existente. Ver el Capítulo 5 del libro, sección "OpenWebUI: Interfaz web
+# alojada localmente".
+#
+# Uso directo:
+#   OLLAMA_BASE_URL=http://192.168.1.50:11434 docker compose \
+#     -f docker-compose-openwebui.yml up -d
+#
+# O usa scripts/setup_openwebui_docker.sh, que exporta la variable por ti.
+# ---------------------------------------------------------------------------
+services:
+  openwebui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: openwebui
+    restart: unless-stopped
+    ports:
+      - "3000:8080"
+    environment:
+      # Dirección del servidor Ollama. En Docker Desktop (Windows/macOS)
+      # host.docker.internal apunta a la máquina anfitriona. En Linux nativo
+      # sustituye por la IP real del servidor Ollama.
+      - OLLAMA_BASE_URL=${OLLAMA_BASE_URL:-http://host.docker.internal:11434}
+      # Desactiva el registro abierto de nuevas cuentas tras crear la cuenta
+      # de administrador inicial (recomendado en entornos institucionales).
+      - ENABLE_SIGNUP=${ENABLE_SIGNUP:-false}
+    volumes:
+      - openwebui_data:/app/backend/data
+
+volumes:
+  openwebui_data:
