@@ -15,6 +15,7 @@ Este repositorio contiene el código, las actividades y las plantillas que acomp
 
 | Carpeta | Contenido |
 |---|---|
+| [`Conceptos`](./Conceptos) | Glosario ampliado de los diez conceptos fundamentales de IA de la introducción del libro, con la cita textual de cada definición técnica, enlaces a las fuentes originales y espacio para anotar tus propios ejemplos. |
 | [`Capitulo 1`](./Capitulo%201) | Tres ejemplos ejecutables en Python: modelo de n-gramas en español, clasificador de sentimiento con LSTM sobre IMDB, y mini *fine-tuning* de GPT-2 en español. Todos preparados para Google Colab. |
 | [`Capitulo 2`](./Capitulo%202) | Lista de verificación legal y ética completa (15 ítems), tres variantes de cláusula de política de IA para el sílabo y el protocolo completo de tratamiento de datos con modelo de aviso de consentimiento. |
 | [`Capitulo 4`](./Capitulo%204) | Comparativa de modelos de IA generativa en sus versiones gratuitas, tabla comparativa en LaTeX y la actividad «Retos con IA Generativa en Parejas» con su banco de imágenes. |
