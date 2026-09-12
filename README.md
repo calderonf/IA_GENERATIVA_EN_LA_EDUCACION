@@ -16,6 +16,7 @@ Este repositorio contiene el código, las actividades y las plantillas que acomp
 | Carpeta | Contenido |
 |---|---|
 | [`Capitulo 1`](./Capitulo%201) | Tres ejemplos ejecutables en Python: modelo de n-gramas en español, clasificador de sentimiento con LSTM sobre IMDB, y mini *fine-tuning* de GPT-2 en español. Todos preparados para Google Colab. |
+| [`Capitulo 2`](./Capitulo%202) | Lista de verificación legal y ética completa (15 ítems), tres variantes de cláusula de política de IA para el sílabo y el protocolo completo de tratamiento de datos con modelo de aviso de consentimiento. |
 | [`Capitulo 4`](./Capitulo%204) | Comparativa de modelos de IA generativa en sus versiones gratuitas, tabla comparativa en LaTeX y la actividad «Retos con IA Generativa en Parejas» con su banco de imágenes. |
 | [`Capitulo 5`](./Capitulo%205) | Recursos para la implementación de LLM locales: documentación oficial, comunidades, artículos y guías de solución de problemas. |
 | [`Capitulo 6`](./Capitulo%206) | Todos los prompts del capítulo de técnicas de estudio, listos para copiar y pegar, organizados por tarea: comprender un tema, organizar apuntes, recuperación activa, repetición espaciada y simulación de exámenes. Incluye tres plantillas: biblioteca personal de prompts, registro de uso de IA para anexar a un trabajo, y guía del proyecto integrador. |
