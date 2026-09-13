@@ -21,6 +21,10 @@ Este repositorio contiene el código, las actividades y las plantillas que acomp
 | [`Capitulo 4`](./Capitulo%204) | Comparativa de modelos de IA generativa en sus versiones gratuitas, tabla comparativa en LaTeX y la actividad «Retos con IA Generativa en Parejas» con su banco de imágenes. |
 | [`Capitulo 5`](./Capitulo%205) | Recursos para la implementación de LLM locales: documentación oficial, comunidades, artículos y guías de solución de problemas. |
 | [`Capitulo 6`](./Capitulo%206) | Todos los prompts del capítulo de técnicas de estudio, listos para copiar y pegar, organizados por tarea: comprender un tema, organizar apuntes, recuperación activa, repetición espaciada y simulación de exámenes. Incluye tres plantillas: biblioteca personal de prompts, registro de uso de IA para anexar a un trabajo, y guía del proyecto integrador. |
+| [`Capitulo 8`](./Capitulo%208) | Guías paso a paso para configurar un tutor IA propio en ChatGPT y en Claude, plantilla completa con variantes por disciplina, y una alternativa portátil (AGENTS.md / CLAUDE.md) para quien quiera una configuración reutilizable entre varias herramientas de agentes de IA. |
+| [`Capitulo 9`](./Capitulo%209) | Sílabo completo de un curso real, en su versión previa y en su versión actualizada con criterios de IA generativa, cambio por cambio; más una plantilla en blanco de los nueve componentes del capítulo. |
+| [`Capitulo 10`](./Capitulo%2010) | Rúbrica completa y editable de validación de materiales generados por IA (corrección disciplinar, accesibilidad, sesgos, derechos de autor, alineación con objetivos), con guía de aplicación y ejemplos resueltos. |
+| [`Capitulo 11`](./Capitulo%2011) | Protocolo completo de consentimiento y privacidad para evaluación asistida por IA, con modelo de aviso de consentimiento y lista de verificación rápida; complementa el protocolo general de tratamiento de datos del capítulo 2. |
 
 ---
 
